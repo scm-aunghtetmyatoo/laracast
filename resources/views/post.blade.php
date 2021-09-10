@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Blog</title>
-</head>
+
+<title>Blog</title>
+<link rel="stylesheet" href="app.css">
+
 <body>
-    <?= $post; ?>
+    <article>
+        <?= $post; ?>
+    </article>
+    <a href="/">Go Back</a>
 </body>
-</html>

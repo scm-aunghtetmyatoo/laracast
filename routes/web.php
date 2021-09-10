@@ -17,11 +17,11 @@ Route::get('/', function () {
     return view('posts');
 });
 
-Route::get('posts/{$post}', function ($slug) {
+Route::get('posts/{post}', function ($slug) {
     $path = __DIR__ . "/../resources/posts/{$slug}.html";
 
     if (!file_exists($path)) {
-        ddd("error");
+        return redirect('/');
     }
 
     $post = file_get_contents($path);
@@ -29,4 +29,4 @@ Route::get('posts/{$post}', function ($slug) {
     return view('post', [
         'post' => $post,
     ]);
-});
+})->where('post', '[A-z_\-]+'); //regular expression; post = line no 30 'post';
